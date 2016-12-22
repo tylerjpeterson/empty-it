@@ -1,0 +1,48 @@
+{
+  "name": "empty-it",
+  "description": "Empties and optionally removes an element in the DOM-friendliest manner.",
+  "author": "Tyler Peterson <tylerjpeterson@gmail.com>",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "scripts": {
+    "build": "mkdir -p dist && npm run js",
+    "js": "browserify -r ./index.js:empty-it > dist/empty-it.debug.js",
+    "test": "npm run build && mocha-phantomjs -p /usr/local/bin/phantomjs test/spec/index.html",
+    "coverage": "npm run build && istanbul cover _mocha -- test/spec/test.js && open coverage/lcov-report/*.html",
+    "test:browser": "npm run build && open test/spec/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.5",
+    "jsdom": "^9.6.0",
+    "mocha": "^2.3.4",
+    "mocha-jsdom": "^1.1.0",
+    "mocha-phantomjs": "^4.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/tylerjpeterson/empty-it/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylerjpeterson/empty-it"
+  },
+  "homepage": "https://github.com/tylerjpeterson/empty-it",
+  "contributors": [
+    ""
+  ],
+  "xo": {
+    "globals": [
+      "document",
+      "window",
+      "require",
+      "module"
+    ]
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=0.10.3"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>emptyIt - Mocha Tests</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../node_modules/mocha/mocha.css">
+</head>
+<body>
+	<div id="container"></div>
+	<div id="mocha"></div>
+	<script src="../../node_modules/mocha/mocha.js"></script>
+	<script src="../../node_modules/chai/chai.js"></script>
+	<script src="../../dist/empty-it.debug.js"></script>
+	<script>
+		var emptyIt = require('empty-it');
+		mocha.setup('bdd');
+	</script>
+	<script src="setup.js"></script>
+	<script src="test.js"></script>
+	<script>mocha.run();</script>
+</body>
+</html>
